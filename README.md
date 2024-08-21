@@ -41,13 +41,13 @@ This repository contains Terraform configuration files to deploy an AWS ECS Clus
 
 3. **Modify terraform.tfvars to match your environment::**
  
-Update the variables in terraform.tfvars with your AWS environment details. Ensure that the SSL certificate ARN is correct.
+   Update the variables in terraform.tfvars with your AWS environment details. Ensure that the SSL certificate ARN is correct.
 
 4. **Plan the deployment:**
     ```bash
     terraform plan
     ```
-Review the plan to ensure that all changes are as expected.
+   Review the plan to ensure that all changes are as expected.
 
 5. **Apply the configuration:**
     ```bash
@@ -65,7 +65,7 @@ Confirm the action when prompted.
 - Terraform Errors: Run terraform validate and terraform plan to debug any issues with the configuration before applying changes.
 
 ## Contributing
-Contributions are welcome! Please open an issue or submit a pull request with your improvements.
+   Contributions are welcome! Please open an issue or submit a pull request with your improvements.
 
 ## Acknowledgments
 - Terraform Documentation
