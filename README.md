@@ -53,7 +53,7 @@ This repository contains Terraform configuration files to deploy an AWS ECS Clus
     ```bash
     terraform apply
     ```
-Confirm the action when prompted.
+   Confirm the action when prompted.
 
 ## Notes
 - Variables: Sensitive data like AWS credentials should be managed carefully. Consider using environment variables or a secret management service.
