@@ -20,7 +20,7 @@ resource "aws_ecs_task_definition" "kipina_dev_task" {
       logConfiguration = {
         logDriver = "awslogs"
         options = {
-          "awslogs-group"         = var.awslogs_group != "" ? var.awslogs_group : "/ecs/${var.task_family_name}"
+          "awslogs-group"         = "/ecs/${var.task_family_name}" # Let AWS define the log group
           "awslogs-region"        = var.aws_region
           "awslogs-stream-prefix" = "ecs"
         }

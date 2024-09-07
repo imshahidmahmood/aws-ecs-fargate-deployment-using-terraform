@@ -6,7 +6,10 @@ resource "aws_ecs_service" "kipina_dev_service" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets          = [aws_subnet.kipina_dev_subnet_public_1.id]
+    subnets          = [
+      aws_subnet.kipina_dev_subnet_public_1.id,
+      aws_subnet.kipina_dev_subnet_public_2.id
+    ]
     security_groups  = [aws_security_group.kipina_dev_sg.id]
     assign_public_ip = true
   }
