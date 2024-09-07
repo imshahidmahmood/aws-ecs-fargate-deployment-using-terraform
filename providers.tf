@@ -8,5 +8,5 @@ terraform {
 }
 
 provider "aws" {
-  profile = "kipina"
+  profile = "kipina_singapore"
 }
