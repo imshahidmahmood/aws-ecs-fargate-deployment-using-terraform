@@ -3,7 +3,7 @@ resource "aws_lb_target_group" "kipina_dev_tg" {
   port        = var.container_port
   protocol    = "HTTP"
   target_type = "ip"
-  vpc_id      = aws_vpc.kipina_dev_vpc.id
+  vpc_id      = aws_vpc.kipina_vpc.id
 
   health_check {
     path                = var.health_check_path

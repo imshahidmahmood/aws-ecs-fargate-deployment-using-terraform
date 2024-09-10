@@ -62,6 +62,7 @@ variable "subnet_public_1_name" {
   description = "Name of the first public subnet"
   type        = string
 }
+
 variable "subnet_public_2_cidr_block" {
   description = "CIDR block for the second public subnet"
   type        = string
@@ -74,6 +75,21 @@ variable "availability_zone_2" {
 
 variable "subnet_public_2_name" {
   description = "Name of the second public subnet"
+  type        = string
+}
+
+variable "subnet_public_3_cidr_block" {
+  description = "CIDR block for the third public subnet"
+  type        = string
+}
+
+variable "availability_zone_3" {
+  description = "Availability Zone for the third public subnet"
+  type        = string
+}
+
+variable "subnet_public_3_name" {
+  description = "Name of the third public subnet"
   type        = string
 }
 
@@ -106,6 +122,7 @@ variable "certificate_arn" {
   description = "The ARN of the SSL certificate to use with the ALB"
   type        = string
 }
+
 variable "aws_region" {
   description = "AWS region"
   type        = string
