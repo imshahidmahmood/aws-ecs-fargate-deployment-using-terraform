@@ -2,6 +2,8 @@
 
 This repository contains Terraform configuration files to deploy an AWS ECS Cluster using Fargate. It includes the necessary resources like VPC, Subnets, Security Groups, ECS Task Definition, ECS Service, Application Load Balancer (ALB), Target Group, and IAM Roles.
 
+![AWS Architecture Diagram](https://github.com/imshahidmahmood/aws-ecs-fargate-deployment-using-terraform/blob/prod/ECS%20with%20Fargate.png)
+
 ## Project Structure
 
 - **`provider.tf`**: Configures the AWS provider.
