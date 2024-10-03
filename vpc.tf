@@ -1,9 +1,6 @@
-resource "aws_vpc" "kipina_dev_vpc" {
-  cidr_block           = var.vpc_cidr_block
-  enable_dns_support   = true
-  enable_dns_hostnames = true
-
-  tags = {
-    Name = var.vpc_name
+data "aws_vpc" "kipina_vpc" {
+  filter {
+    name   = "tag:Name"
+    values = ["kipina_vpc"] # Replace this with the actual tag name if needed
   }
 }
