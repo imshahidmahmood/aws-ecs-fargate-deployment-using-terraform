@@ -1,7 +1,7 @@
-resource "aws_ecs_service" "kipina_prod_service" {
+resource "aws_ecs_service" "kipina_prod_v2_service" {
   name            = var.service_name
-  cluster         = aws_ecs_cluster.kipina_prod_cluster.id
-  task_definition = aws_ecs_task_definition.kipina_prod_task.arn
+  cluster         = data.aws_ecs_cluster.kipina_existing_cluster.id # Reference existing cluster dynamically
+  task_definition = aws_ecs_task_definition.kipina_prod_v2_task.arn
   desired_count   = var.desired_count
   launch_type     = "FARGATE"
 
@@ -11,18 +11,18 @@ resource "aws_ecs_service" "kipina_prod_service" {
       data.aws_subnet.kipina_subnet_public_2.id,
       data.aws_subnet.kipina_subnet_public_3.id 
     ]
-    security_groups  = [aws_security_group.kipina_prod_sg.id]
+    security_groups  = [aws_security_group.kipina_prod_v2_sg.id]
     assign_public_ip = true
   }
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.kipina_prod_tg.arn
-    container_name   = "kipina-prod-container"
+    target_group_arn = aws_lb_target_group.kipina_prod_v2_tg.arn
+    container_name   = "kipina-prod-v2-container"
     container_port   = var.container_port
   }
 
   depends_on = [
     aws_iam_role_policy_attachment.ecs_task_execution_role_policy,
-    aws_lb_listener.kipina_prod_https_listener
+    aws_lb_listener.kipina_prod_v2_https_listener
   ]
 }

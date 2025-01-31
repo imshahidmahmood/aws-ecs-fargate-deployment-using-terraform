@@ -1,8 +1,8 @@
-resource "aws_lb" "kipina_prod_alb" {
+resource "aws_lb" "kipina_prod_v2_alb" {
   name               = var.alb_name
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.load_balancer_wizard_prod_sg.id]
+  security_groups    = [aws_security_group.load_balancer_wizard_prod_v2_sg.id]
 
   subnets = [
     data.aws_subnet.kipina_subnet_public_1.id,

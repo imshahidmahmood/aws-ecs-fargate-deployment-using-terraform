@@ -1,4 +1,4 @@
-#Create the Log Group
+# Create the Log Group
 resource "aws_cloudwatch_log_group" "ecs_log_group" {
   name              = "/ecs/${var.task_family_name}"
   retention_in_days = 7
@@ -9,7 +9,7 @@ resource "aws_cloudwatch_log_group" "ecs_log_group" {
 }
 
 # ECS Task Definition
-resource "aws_ecs_task_definition" "kipina_prod_task" {
+resource "aws_ecs_task_definition" "kipina_prod_v2_task" {
   family                   = var.task_family_name
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
@@ -19,7 +19,7 @@ resource "aws_ecs_task_definition" "kipina_prod_task" {
 
   container_definitions = jsonencode([
     {
-      name      = "kipina-prod-container"
+      name      = "kipina-prod-v2-container"
       image     = var.container_image
       essential = true
       portMappings = [

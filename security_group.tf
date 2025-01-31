@@ -1,4 +1,4 @@
-resource "aws_security_group" "load_balancer_wizard_prod_sg" {
+resource "aws_security_group" "load_balancer_wizard_prod_v2_sg" {
   vpc_id = data.aws_vpc.kipina_vpc.id # Use the existing dev VPC
 
   ingress {
@@ -37,19 +37,19 @@ resource "aws_security_group" "load_balancer_wizard_prod_sg" {
   }
 
   tags = {
-    Name = "load-balancer-wizard-prod"
+    Name = "load-balancer-wizard-prod_v2"
   }
 }
 
 # Security group for ECS service
-resource "aws_security_group" "kipina_prod_sg" {
+resource "aws_security_group" "kipina_prod_v2_sg" {
   vpc_id = data.aws_vpc.kipina_vpc.id # Use the existing dev VPC
 
   ingress {
     from_port       = 3000
     to_port         = 3000
     protocol        = "tcp"
-    security_groups = [aws_security_group.load_balancer_wizard_prod_sg.id]
+    security_groups = [aws_security_group.load_balancer_wizard_prod_v2_sg.id]
   }
 
   egress {
@@ -60,6 +60,6 @@ resource "aws_security_group" "kipina_prod_sg" {
   }
 
   tags = {
-    Name = "kipina-service-prod"
+    Name = "kipina-service-prod_v2"
   }
 }

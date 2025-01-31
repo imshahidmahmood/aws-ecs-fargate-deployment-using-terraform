@@ -1,4 +1,4 @@
-resource "aws_lb_target_group" "kipina_prod_tg" {
+resource "aws_lb_target_group" "kipina_prod_v2_tg" {
   name        = var.target_group_name
   port        = var.container_port
   protocol    = "HTTP"
