@@ -9,7 +9,7 @@
 # Crash log files
 crash.log
 
-# .tfvars files (ignore if they contain sensitive data like passwords)
+# .tfvars files (ignore if they contain sensitive data like passwords)()
 *.tfvars
 
 # Override files (used to override default settings)
